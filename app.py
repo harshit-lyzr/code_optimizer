@@ -31,10 +31,12 @@ image = Image.open("lyzr-logo.png")
 st.image(image, width=150)
 
 # App title and introduction
-st.title("Lyzr Code Optimizer")
+st.title("Lyzr Code Optimizer🧑🏼‍💻")
 st.markdown("### Welcome to the Lyzr Code Optimizer!")
+st.markdown("Lyzr Code Optimizer is curated to optimize code and reduce time complexity!!!")
 
-code = st.text_area("Enter your Code: ", height=300)
+code = st.text_area("Enter your Code: ", height=300,placeholder=f"""print("Hello World!!!")
+""")
 
 open_ai_text_completion_model = OpenAIModel(
     api_key=api,
@@ -87,3 +89,14 @@ if st.button("Optimize"):
     solution = code_optimization(code)
     st.markdown(solution)
 
+with st.expander("ℹ️ - About this App"):
+    st.markdown("""
+    This app uses Lyzr Automata Agent Optimize your code. For any inquiries or issues, please contact Lyzr.
+
+    """)
+    st.link_button("Lyzr", url='https://www.lyzr.ai/', use_container_width=True)
+    st.link_button("Book a Demo", url='https://www.lyzr.ai/book-demo/', use_container_width=True)
+    st.link_button("Discord", url='https://discord.gg/nm7zSyEFA2', use_container_width=True)
+    st.link_button("Slack",
+                   url='https://join.slack.com/t/genaiforenterprise/shared_invite/zt-2a7fr38f7-_QDOY1W1WSlSiYNAEncLGw',
+                   use_container_width=True)
